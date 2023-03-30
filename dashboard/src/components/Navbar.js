@@ -5,10 +5,11 @@ import {
 } from "@ant-design/icons";
 import logo from "../assests/logo.svg";
 import { Layout, Menu } from "antd";
+import { NavLink } from "react-router-dom";
 import React, { useState } from "react";
 import "../styles/Navbar.css";
 
-const { Sider, Content } = Layout;
+const { Sider } = Layout;
 
 const Navbar = () => {
   const [collapsed, setCollapsed] = useState(true);
@@ -28,7 +29,9 @@ const Navbar = () => {
         onCollapse={(value) => setCollapsed(value)}
       >
         <div className="logo">
-          <img src={logo} alt="atom" />
+          <NavLink to="/">
+            <img src={logo} alt="atom" />
+          </NavLink>
         </div>
         <Menu
           className="menu"
@@ -39,35 +42,21 @@ const Navbar = () => {
             {
               key: "1",
               icon: <HomeOutlined className="homeIcon" />,
-              label: "Home",
+              label: <NavLink to="/">Home</NavLink>,
             },
             {
               key: "2",
               icon: <AuditOutlined className="reportIcon" />,
-              label: "Report",
+              label: <NavLink to="/report">Report</NavLink>,
             },
             {
               key: "3",
               icon: <QuestionCircleOutlined className="aboutIcon" />,
-              label: "About",
+              label: <NavLink to="/about">About</NavLink>,
             },
           ]}
         />
       </Sider>
-      <Layout className="site-layout">
-        {/* <Header></Header> */}
-        <Content
-          className="content"
-          style={{
-            padding: "25px",
-            background: "#141414",
-            minHeight: 280,
-            color: "white",
-          }}
-        >
-          Content
-        </Content>
-      </Layout>
     </Layout>
   );
 };

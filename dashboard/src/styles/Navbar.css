@@ -1,3 +1,7 @@
 .logo {
   margin: 16px;
 }
+
+:where(.css-dev-only-do-not-override-1e3x2xa).ant-layout {
+  display: flex;
+}
