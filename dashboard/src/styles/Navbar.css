@@ -1,5 +1,15 @@
 .logo {
   margin: 16px;
+  width: 50px;
+}
+
+.open {
+  margin-left: auto;
+  margin-right: auto;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.ant-layout-sider-trigger {
 }
 
 :where(.css-dev-only-do-not-override-1e3x2xa).ant-layout {

@@ -11,7 +11,9 @@ const About = () => {
         className="content"
         style={{
           padding: "25px",
-          background: "#141414",
+          width: "100%",
+          height: "100vh",
+          background: "#021e39",
           minHeight: 280,
           color: "white",
         }}

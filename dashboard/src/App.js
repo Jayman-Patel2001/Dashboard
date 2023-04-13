@@ -5,6 +5,7 @@ import HomeCard from "./components/HomeCard";
 import About from "./components/About";
 import Report from "./components/Report";
 import Error from "./components/Error";
+import MachineDetail from "./components/MachineDetail";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<HomeCard />} />
           <Route path="/about" element={<About />} />
           <Route path="/report" element={<Report />} />
+          <Route path="machines/:machineId" element={<MachineDetail />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </div>

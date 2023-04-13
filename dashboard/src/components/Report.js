@@ -11,7 +11,10 @@ const Report = () => {
         className="content"
         style={{
           padding: "25px",
-          background: "#141414",
+          width: "100%",
+          height: "100vh",
+          display: "flex",
+          background: "#021e39",
           minHeight: 280,
           color: "white",
         }}

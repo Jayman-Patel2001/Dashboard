@@ -1,0 +1,35 @@
+.title {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.areaContainer,
+.lineContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
+  margin-left: 0.5rem;
+}
+
+.areaGName,
+.lineGName {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 1.5rem;
+  letter-spacing: 1px;
+  margin-left: 3em;
+}

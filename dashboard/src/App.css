@@ -4,6 +4,23 @@
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  width: 1em;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #021e39;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #535b99;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #499dd8;
+}
+
 .container {
   display: flex;
 }

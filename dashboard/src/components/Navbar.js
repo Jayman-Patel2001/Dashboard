@@ -14,21 +14,29 @@ const { Sider } = Layout;
 const Navbar = () => {
   const [collapsed, setCollapsed] = useState(true);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Layout
       style={{
-        height: "100vh",
+        height: "100%",
+        position: "fixed",
       }}
     >
       <Sider
         style={{
           paddingTop: "10px",
         }}
+        onClick={toggleSidebar}
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
       >
-        <div className="logo">
+        <div className={`logo ${isOpen ? "open" : ""}`}>
           <NavLink to="/">
             <img src={logo} alt="atom" />
           </NavLink>
