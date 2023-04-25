@@ -1,49 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Overview.css";
 import { Pie } from "@ant-design/plots";
+import initialDetailState from "./RealData";
 
-const Overview = () => {
-  const data = [
-    {
-      type: "Operation Error",
-      value: 27,
-    },
-    {
-      type: "Equipment Failures",
-      value: 25,
-    },
-    {
-      type: "Material Shortages",
-      value: 18,
-    },
-    {
-      type: "Maintenance Issues",
-      value: 15,
-    },
-  ];
+const Overview = ({ data }) => {
+  const totalLoss = data.targetQty - data.achieveQty;
 
   const data1 = [
     {
-      type: "Stop Loss",
-      value: 37,
+      type: "Achieved Percentage",
+      value: Math.floor((data.achieveQty / data.targetQty) * 100),
     },
     {
-      type: "Speed Loss",
-      value: 29,
+      type: "Reject Percentage",
+      value: Math.floor((data.rejectQty / data.achieveQty) * 100),
+    },
+    {
+      type: "Loss Percentages",
+      value: Math.floor((totalLoss / data.targetQty) * 100),
+    },
+    {
+      type: "Production Percentage",
+      value: data.prodPer,
+    },
+  ];
+
+  const data2 = [
+    {
+      type: "Productivity Loss",
+      value: 100 - data.prodPer,
+    },
+    {
+      type: "Availability Loss",
+      value: 100 - data.availPer,
     },
     {
       type: "Quality Loss",
-      value: 11,
+      value: 100 - data.qlt,
     },
     {
       type: "OEE Loss",
-      value: 21,
+      value: 100 - data.oee,
     },
   ];
 
   const config = {
     appendPadding: 0,
-    data,
+    data: data1,
     angleField: "value",
     colorField: "type",
     radius: 1,
@@ -82,14 +85,14 @@ const Overview = () => {
           fontSize: "2rem",
           letterSpacing: "1px",
         },
-        content: "Downtime",
+        content: "Machine\n Performance",
       },
     },
   };
 
   const config1 = {
     appendPadding: 0,
-    data: data1,
+    data: data2,
     angleField: "value",
     colorField: "type",
     radius: 1,

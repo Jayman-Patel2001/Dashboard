@@ -7,9 +7,9 @@
   justify-content: center;
 }
 .ant-progress-inner {
-  width: 200px !important;
-  height: 200px !important;
-  font-size: 60px !important;
+  width: 190px !important;
+  height: 190px !important;
+  font-size: 45px !important;
 }
 .ant-progress-text {
   color: white !important;

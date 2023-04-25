@@ -11,50 +11,32 @@ import {
 } from "recharts";
 import "../styles/LineG.css";
 
-const data = [
-  {
-    name: "Jan 01",
-    "Required Rate": 4000,
-    "Actual Rate": 2400,
-    "Standard Rate": 2600,
-  },
-  {
-    name: "Jan 02",
-    "Required Rate": 3000,
-    "Actual Rate": 1398,
-    "Standard Rate": 1510,
-  },
-  {
-    name: "Jan 03",
-    "Required Rate": 5000,
-    "Actual Rate": 4500,
-    "Standard Rate": 4690,
-  },
-  {
-    name: "Jan 04",
-    "Required Rate": 3480,
-    "Actual Rate": 3308,
-    "Standard Rate": 3350,
-  },
-  {
-    name: "Jan 05",
-    "Required Rate": 3890,
-    "Actual Rate": 3800,
-    "Standard Rate": 3850,
-  },
-  {
-    name: "Jan 06",
-    "Required Rate": 4090,
-    "Actual Rate": 3800,
-    "Standard Rate": 3900,
-  },
-];
+const LineG = ({ data }) => {
+  let StandardData = [];
+  let RequiredData = [];
+  let ActualData = [];
 
-const LineG = () => {
+  data.series.map((item) => {
+    if (item.name === "Standard") {
+      StandardData = item.data;
+    } else if (item.name === "Required") {
+      RequiredData = item.data;
+    } else if (item.name === "Actual") {
+      ActualData = item.data;
+    }
+  });
+
+  const newData = data.xAxis.map((name, index) => ({
+    name,
+    StandardData: StandardData[index],
+    RequiredData: RequiredData[index],
+    ActualData: ActualData[index],
+  }));
+
   return (
     <ResponsiveContainer className="line-chart" width="45%" height="30%">
       <LineChart
-        data={data}
+        data={newData}
         margin={{
           top: 30,
           bottom: 20,
@@ -62,14 +44,16 @@ const LineG = () => {
           left: 0,
         }}
       >
+        {/* {console.log(newData)} */}
         <XAxis dataKey="name"></XAxis>
         <YAxis />
         <Tooltip />
         <Legend verticalAlign="top" height={10} />
-        <Line type="monotone" dataKey="Required Rate" stroke="#82ca9d" />
+        <Line type="monotone" dataKey="StandardData" stroke="#00C7FF" />
+        <Line type="monotone" dataKey="RequiredData" stroke="#82ca9d" />
         <Line
           type="monotone"
-          dataKey="Actual Rate"
+          dataKey="ActualData"
           stroke="#8884d8"
           activeDot={{ r: 8 }}
         />

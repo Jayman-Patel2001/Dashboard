@@ -1,0 +1,51 @@
+const DummyData = [
+  {
+    Id: 1,
+    MachineName: "Machine1",
+    Pcount: 75,
+    Trate: 96,
+    Arate: 69,
+    Status: true,
+  },
+  {
+    Id: 2,
+    MachineName: "Machine2",
+    Pcount: 69,
+    Trate: 77,
+    Arate: 79,
+    Status: true,
+  },
+  {
+    Id: 3,
+    MachineName: "Machine3",
+    Pcount: 96,
+    Trate: 89,
+    Arate: 100,
+    Status: true,
+  },
+  {
+    Id: 4,
+    MachineName: "Machine4",
+    Pcount: 88,
+    Trate: 89,
+    Arate: 89,
+    Status: true,
+  },
+  {
+    Id: 5,
+    MachineName: "Machine5",
+    Pcount: 100,
+    Trate: 95,
+    Arate: 91,
+    Status: true,
+  },
+  {
+    Id: 6,
+    MachineName: "Machine6",
+    Pcount: 52,
+    Trate: 76,
+    Arate: 71,
+    Status: false,
+  },
+];
+export default DummyData;

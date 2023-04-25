@@ -1,0 +1,58 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.heading h2 {
+  font-weight: bolder;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.heading h2 .electronLink {
+  color: #3f89ff;
+  margin-left: 1rem;
+}
+
+.heading h3 {
+  font-weight: 200;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 5%;
+}
+
+.about-image {
+  width: 30vw;
+  height: 60vh;
+  display: table;
+  position: relative;
+  left: 5%;
+  margin-top: auto;
+}
+
+.text-box {
+  width: 35vw;
+  font-size: 1.2rem;
+  margin-left: 15rem;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
+  text-align: start;
+  font-weight: 400;
+}
+
+.nutronLink {
+  color: #3f89ff;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}

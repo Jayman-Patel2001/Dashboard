@@ -2,30 +2,29 @@ import React from "react";
 import { Progress } from "antd";
 import "../styles/Performance.css";
 
-const data = [
-  {
-    factor: "Productivity",
-    percentage: "86",
-  },
-  {
-    factor: "Availability",
-    percentage: "91",
-  },
-  {
-    factor: "Quality",
-    percentage: "89",
-  },
-  {
-    factor: "OEE",
-    percentage: "88",
-  },
-];
-
-const Performance = () => {
+const Performance = ({ data }) => {
+  const newData = [
+    {
+      factor: "Productivity",
+      percentage: data.prodPer,
+    },
+    {
+      factor: "Availability",
+      percentage: data.availPer,
+    },
+    {
+      factor: "Quality",
+      percentage: data.qlt,
+    },
+    {
+      factor: "OEE",
+      percentage: data.oee,
+    },
+  ];
   return (
     <div className="perfContainer">
-      {data &&
-        data.map((items, _index) => {
+      {newData &&
+        newData.map((items, _index) => {
           return (
             <div className="perfRev">
               <Progress
